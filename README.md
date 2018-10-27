@@ -4,7 +4,7 @@
 > inspired from LeekDuck's shiny graphic
 
 
-### Pokémons CP list
+### ● Pokémons CP list
 
 > https://rplus.github.io/Pokemon-CP-list/  
 > show CP / IV in my style
