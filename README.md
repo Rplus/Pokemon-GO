@@ -1,3 +1,8 @@
+### ● Pokemon GO Taiwan event
+
+<iframe src="https://calendar.google.com/calendar/embed?src=maqik865kbgepm8aco3hrndrik%40group.calendar.google.com&ctz=Asia%2FTaipei" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"> </iframe>
+
+
 ### ● Shiny Checklist
 
 > <https://rplus.github.io/Pokemon-shiny/>  
@@ -32,8 +37,3 @@
 
 > <https://github.com/Rplus/PokemonGo-data>  
 > do something with [GAME_MASTER.json](https://github.com/pokemongo-dev-contrib/pokemongo-game-master)
-
-
-### ● Pokemon GO Taiwan event
-
-<iframe src="https://calendar.google.com/calendar/embed?src=maqik865kbgepm8aco3hrndrik%40group.calendar.google.com&ctz=Asia%2FTaipei" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"> </iframe>
