@@ -6,7 +6,7 @@
 
 ### Pokémons CP list
 
-> https://rplus.github.io/Pokemon-CP-list/
+> https://rplus.github.io/Pokemon-CP-list/  
 > show CP / IV in my style
 
 
