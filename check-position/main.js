@@ -4,7 +4,7 @@ let checkPosition = () => {
     setPosition(e.coords);
     img.checker = setTimeout(() => {
       checkPosition();
-    }, (e.coords.accuracy < 100 ) ? 200 : 10000 );
+    }, (e.coords.accuracy < 100 ) ? 200 : 1000 );
   });
 };
 
