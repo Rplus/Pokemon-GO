@@ -46,7 +46,7 @@ body {
   background-size: cover;
 }
 .img[data-checking] {
-  box-shadow: 0 0 0 3px;
+  box-shadow: 0 0 0 10px;
 }
 .img[data-checking]::after {
   content: 'checking...';
@@ -123,6 +123,7 @@ let setPosition = (coords) => {
   img.style.setProperty('--xp', `${xp * 100}%`);
   img.style.setProperty('--yp', `${yp * 100}%`);
   img.style.setProperty('--size', `${(coords.accuracy * 50 / imgW)}%`);
+  img.style.color = coords.accuracy > 100 ? '#f00' : '#000';
   box.dataset.update = timeFromater();
 };
 
