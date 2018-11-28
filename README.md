@@ -17,6 +17,12 @@
 > show CP / IV in my style
 
 
+### ● PM list
+
+> <https://rplus.github.io/pm-list/>
+> 泛用型簡易 Pokemon 列表，可自訂說明用的標頭
+
+
 ### ● Task map
 
 > <https://rplus.github.io/PMGO-tasks-map/>  
@@ -39,3 +45,7 @@
 
 > <https://github.com/Rplus/PokemonGo-data>  
 > do something with [GAME_MASTER.json](https://github.com/pokemongo-dev-contrib/pokemongo-game-master)
+
+
+歡迎到 Facebook 公開活動裡討論及給予迴饋：  
+<https://www.facebook.com/events/367982723746778/>
