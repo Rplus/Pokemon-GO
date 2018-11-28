@@ -114,16 +114,22 @@ let p2 = [25.046344, 121.580120];
 let imgW = 550 * 2;
 let box = document.querySelector('.box');
 let img = document.querySelector('.img');
+let prevState = 0;
 
 let setPosition = (coords) => {
   console.log('accuracy', coords.accuracy);
   let yp = (coords.latitude - p1[0]) / (p2[0] - p1[0]);
   let xp = (coords.longitude - p1[1]) / (p2[1] - p1[1]);
+  let newState = coords.accuracy > 100 ? 1 : 0;
+  if (newState !== prevState) {
+    navigator.vibrate(200);
+  }
+  prevState = newState;
   console.log({xp, yp});
   img.style.setProperty('--xp', `${xp * 100}%`);
   img.style.setProperty('--yp', `${yp * 100}%`);
   img.style.setProperty('--size', `${(coords.accuracy * 50 / imgW)}%`);
-  img.style.color = coords.accuracy > 100 ? '#f00' : '#000';
+  img.style.color = newState ? '#f00' : '#000';
   box.dataset.update = timeFromater();
 };
 
