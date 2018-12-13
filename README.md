@@ -19,7 +19,7 @@
 
 ### ● PM list
 
-> <https://rplus.github.io/pm-list/>
+> <https://rplus.github.io/pm-list/>  
 > 泛用型簡易 Pokemon 列表，可自訂說明用的標頭
 
 
@@ -38,7 +38,7 @@
 #### ● Pokemon Go Type Effectiveness
 
 > <https://codepen.io/Rplus/full/aRPeXz>  
-> ![](https://pbs.twimg.com/media/DqaB62IV4AIRXy9.jpg)
+> ![](https://pbs.twimg.com/media/DuUqTKtUYAAc2fn.jpg)
 
 
 #### ● PokemonGo-data
