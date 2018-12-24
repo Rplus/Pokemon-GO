@@ -31,7 +31,7 @@
 
 #### ● 田野調查任務獎勵列表
 
-> <https://rplus.github.io/Pokemon-Task/>  
+> <del><https://rplus.github.io/Pokemon-Task/></del>  
 > (荒廢中，久未更新…)
 
 
@@ -39,6 +39,11 @@
 
 > <https://codepen.io/Rplus/full/aRPeXz>  
 > ![](https://pbs.twimg.com/media/DuUqTKtUYAAc2fn.jpg)
+
+
+#### ● Custom Pokeomn stats CP checker
+
+> <https://codepen.io/Rplus/full/bOWQVq>
 
 
 #### ● PokemonGo-data
@@ -49,3 +54,11 @@
 
 歡迎到 Facebook 公開活動裡討論及給予迴饋：  
 <https://www.facebook.com/events/367982723746778/>
+=======
+
+
+常用網站：
+
+* 當前蛋池: <https://thesilphroad.com/egg-distances>
+* 當前 BOSS: <https://thesilphroad.com/raid-bosses>
+* 戰鬥模擬器: <https://www.pokebattler.com/fights>
