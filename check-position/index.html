@@ -104,7 +104,7 @@ let checkPosition = () => {
     setPosition(e.coords);
     img.checker = setTimeout(() => {
       checkPosition();
-    }, (e.coords.accuracy < 100 ) ? 200 : 1000 );
+    }, (e.coords.accuracy < 150 ) ? 200 : 1000 );
   });
 };
 
@@ -120,7 +120,7 @@ let setPosition = (coords) => {
   console.log('accuracy', coords.accuracy);
   let yp = (coords.latitude - p1[0]) / (p2[0] - p1[0]);
   let xp = (coords.longitude - p1[1]) / (p2[1] - p1[1]);
-  let newState = coords.accuracy > 100 ? 1 : 0;
+  let newState = coords.accuracy > 150 ? 1 : 0;
   if (newState !== prevState) {
     navigator.vibrate(200);
   }
