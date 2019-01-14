@@ -26,10 +26,17 @@ body {
   box-shadow: inset 0 0 0 10px;
 }
 .box::after {
-  content: 'update: ' attr(data-update);
+  content: 'update: ' attr(data-update)
+           '\alat: ' attr(data-lat)
+           '\alng: ' attr(data-lng)
+           '\a(m): ' attr(data-accuracy)
+           ;
   position: absolute;
   right: 1em;
   bottom: 1em;
+  white-space: pre;
+  text-align: right;
+  font-family: monospace;
 }
 .img {
   position: relative;
@@ -131,6 +138,9 @@ let setPosition = (coords) => {
   img.style.setProperty('--size', `${(coords.accuracy * 50 / imgW)}%`);
   img.style.color = newState ? '#f00' : '#000';
   box.dataset.update = timeFromater();
+  box.dataset.lat = coords.latitude.toFixed(2);
+  box.dataset.lng = coords.longitude.toFixed(2);
+  box.dataset.accuracy = coords.accuracy.toFixed(2);
 };
 
 let timeFromater = () => {
@@ -147,10 +157,6 @@ img.addEventListener('click', () => {
     clearTimeout(img.checker);
   }
 });
-
-document.addEventListener('visibilityChange', () => {
-  img.click();
-}, false);
 
 </script>
 </body>
