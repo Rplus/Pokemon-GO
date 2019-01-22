@@ -1,0 +1,197 @@
+-
+  var types = ['', 'Normal', 'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel', 'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark', 'Fairy'];
+
+  var img = (type) => `https://rplus.github.io/Pokemon-CP-list/img/type/type_${type.toLowerCase()}.png`;
+
+  var factor = 1.6;
+  var f = {
+    '2': +(factor * factor).toFixed(2),
+    '1': factor,
+    '-1': 1 / factor,
+    '-2': +((1 / factor) * (1 / factor)).toFixed(2),
+  };
+
+  var effectivenessTable = {
+    '2': `x${f[2]}`,
+    '1': `x${f[1]}`,
+    '-1': `x${f[-1]}`,
+    '-2': `x${f[-2]}`,
+  };
+
+  var attckEffectiveness = {
+    'Normal': {
+      Rock: -1,
+      Ghost: -2,
+      Steel: -1,
+    },
+    'Fighting': {
+      Normal: 1,
+      Flying: -1,
+      Poison: -1,
+      Rock: 1,
+      Bug: -1,
+      Ghost: -2,
+      Steel: 1,
+      Psychic: -1,
+      Ice: 1,
+      Dark: 1,
+      Fairy: -1,
+    },
+    'Flying': {
+      Fighting: 1,
+      Rock: -1,
+      Bug: 1,
+      Steel: -1,
+      Grass: 1,
+      Electric: -1,
+    },
+    'Poison': {
+      Poison: -1,
+      Ground: -1,
+      Rock: -1,
+      Ghost: -1,
+      Steel: -2,
+      Grass: 1,
+      Fairy: 1,
+    },
+    'Ground': {
+      Flying: -2,
+      Poison: 1,
+      Rock: 1,
+      Bug: -1,
+      Steel: 1,
+      Fire: 1,
+      Grass: -1,
+      Electric: 1,
+    },
+    'Rock': {
+      Fighting: -1,
+      Flying: 1,
+      Ground: -1,
+      Bug: 1,
+      Steel: -1,
+      Fire: 1,
+      Ice: 1,
+    },
+    'Bug': {
+      Fighting: -1,
+      Flying: -1,
+      Poison: -1,
+      Ghost: -1,
+      Steel: -1,
+      Fire: -1,
+      Grass: 1,
+      Psychic: 1,
+      Dark: 1,
+      Fairy: -1,
+    },
+    'Ghost': {
+      Normal: -2,
+      Ghost: 1,
+      Psychic: 1,
+      Dark: -1,
+    },
+    'Steel': {
+      Rock: 1,
+      Steel: -1,
+      Fire: -1,
+      Water: -1,
+      Electric: -1,
+      Ice: 1,
+      Fairy: 1,
+    },
+    'Fire': {
+      Rock: -1,
+      Bug: 1,
+      Steel: 1,
+      Fire: -1,
+      Water: -1,
+      Grass: 1,
+      Ice: 1,
+      Dragon: -1,
+    },
+    'Water': {
+      Ground: 1,
+      Rock: 1,
+      Fire: 1,
+      Water: -1,
+      Grass: -1,
+      Dragon: -1,
+    },
+    'Grass': {
+      Flying: -1,
+      Poison: -1,
+      Ground: 1,
+      Rock: 1,
+      Bug: -1,
+      Steel: -1,
+      Fire: -1,
+      Water: 1,
+      Grass: -1,
+      Dragon: -1,
+    },
+    'Electric': {
+      Flying: 1,
+      Ground: -2,
+      Water: 1,
+      Grass: -1,
+      Electric: -1,
+      Dragon: -1,
+    },
+    'Psychic': {
+      Fighting: 1,
+      Poison: 1,
+      Steel: -1,
+      Psychic: -1,
+      Dark: -2,
+    },
+    'Ice': {
+      Flying: 1,
+      Ground: 1,
+      Steel: -1,
+      Fire: -1,
+      Water: -1,
+      Grass: 1,
+      Ice: -1,
+      Dragon: 1,
+    },
+    'Dragon': {
+      Steel: -1,
+      Dragon: 1,
+      Fairy: -2,
+    },
+    'Dark': {
+      Fighting: -1,
+      Ghost: 1,
+      Psychic: 1,
+      Dark: -1,
+      Fairy: -1,
+    },
+    'Fairy': {
+      Fighting: 1,
+      Poison: -1,
+      Steel: -1,
+      Fire: -1,
+      Dragon: 1,
+      Dark: 1,
+    },
+  };
+
+  var chart = Object.keys(attckEffectiveness).reduce((obj, type) => {
+    obj[type] = {
+      'atk-p': [],
+      'atk-n': [],
+      'def-p': [],
+      'def-n': [],
+    };
+    return obj;
+  }, {});
+
+  for (let atkType in attckEffectiveness) {
+    for (let defType in attckEffectiveness[atkType]) {
+      let value = attckEffectiveness[atkType][defType];
+      let dir = value > 0 ? 'p' : 'n';
+      chart[atkType][`atk-${dir}`].push([defType, value]);
+      chart[defType][`def-${dir}`].push([atkType, value]);
+    }
+  }

@@ -1,0 +1,329 @@
+$types: "Bug", "Dark", "Dragon", "Electric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water";
+
+
+$factor-color_1: #cfc;
+$factor-color_-1: #fcc;
+$factor-color_-2: #f99;
+
+:root {
+  text-align: center;
+  // color: #fff;
+  // background-color: hsla(0, 0%, 20%, 1);
+}
+
+.vertical-lr {
+  height: max-content;
+  writing-mode: vertical-rl;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  max-width: 600px;
+  border-collapse: collapse;
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+.data {
+  position: relative;
+  overflow: hidden;
+
+  th[data-type] {
+    background-color: hsla(0, 0%, 50%, .1);
+    padding: .5vmin;
+
+    img {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  th[data-type],
+  td {
+    position: relative;
+    box-shadow: inset 0 0 1px #ccc;
+  }
+
+  td, th {
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background-color: #ccc;
+      box-shadow: inset 0 0 0 1px;
+      opacity: 0;
+    }
+
+    &::before {
+      top: -100vmax;
+      bottom: -100vmax;
+    }
+
+    &::after {
+      left: -100vmax;
+      right: -100vmax;
+    }
+  }
+
+  & tr:not(:nth-of-type(1)):hover th:hover::after,
+  & tr:hover th:not(:nth-of-type(1)):hover::before,
+  & tr:hover td:hover::before,
+  & tr:hover td:hover::after {
+    opacity: .2;
+  }
+}
+
+.type-icon {
+  $icon-size: 24px;
+
+  display: block;
+  width: 1em;
+  height: 1em;
+  background-image: url('sprite.png');
+  background-size: (1em * length($types)) 1em;
+  background-position: calc(100% * (var(--i) - 1) / #{length($types) - 1}) 0;
+  font-size: $icon-size;
+
+  @for $var from 1 through length($types) {
+    $_type: nth($types, $var);
+    &.type-icon__#{$_type} {
+      --i: $var;
+
+      #type-#{$_type}:target ~ table.data & {
+        background-color: #ff0;
+      }
+    }
+  }
+}
+
+.type-anchor {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.data [data-factor] {
+  box-shadow: inset 0 0 1px 1px rgba(#000, .15);
+}
+
+[data-factor="-2"] {
+  background-color: $factor-color_-2;
+}
+[data-factor="-1"] {
+  background-color: $factor-color_-1;
+}
+[data-factor="1"] {
+  background-color: $factor-color_1;
+}
+
+.section {
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.data-section {
+  position: relative;
+  margin-top: 2.5rem;
+
+  &::before {
+    content: 'Defending (Pokemon) Type';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+  }
+
+  &::after {
+    content: 'Attacking (Skill) Type';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    writing-mode: vertical-rl;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  margin: 1em auto;
+  text-align: left;
+}
+
+.factor-label {
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 2.5em;
+  margin-right: .5em;
+}
+
+.label dd {
+  margin: unset;
+}
+
+.factor {
+  text-transform: initial;
+  font-family: monospace;
+}
+.note {
+  margin: 0 auto;
+  text-align: left;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  background-color: rgba(#f00, .8);
+  background-color: rgba(#fff, .75);
+
+  .type-anchor:target ~ & {
+    display: block;
+  }
+}
+
+%show-me {
+  display: grid;
+  grid-template:
+    'def-p . atk-p' 1fr
+    '.     c     .' 10%
+    'def-n . atk-n' 1fr / 1fr 10% 1fr;
+  grid-gap: .5rem;
+}
+
+.type-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  padding: 5%;
+  pointer-events: none;
+
+  @each $i in $types {
+    #type-#{$i}:target ~ .chart > &.type-chart__#{$i} {
+      @extend %show-me;
+    }
+  }
+
+  .target-type {
+    grid-area: c;
+    justify-self: center;
+    align-self: center;
+    font-size: 5rem;
+  }
+
+  a {
+    color: rgba(#000, .3);
+    filter: drop-shadow(0 5px 4px);
+    background-color: unset;
+
+    &[data-factor="-2"] {
+      color: #000;
+    }
+  }
+}
+
+.type-panel {
+  display: flex;
+  align-content: flex-start;
+
+  &[data-effect^="def"] {
+    flex-direction: row-reverse;
+  }
+
+  &[data-effect="atk-n"],
+  &[data-effect="def-n"] {
+    flex-wrap: wrap;
+  }
+
+  &[data-effect="atk-p"],
+  &[data-effect="def-p"] {
+    flex-wrap: wrap-reverse;
+  }
+
+  &[data-effect="atk-p"] { grid-area: atk-p; }
+  &[data-effect="atk-n"] { grid-area: atk-n; }
+  &[data-effect="def-p"] { grid-area: def-p; }
+  &[data-effect="def-n"] { grid-area: def-n; }
+
+  > .type-icon {
+    margin: .25rem;
+    font-size: 3rem;
+    pointer-events: auto;
+    position: relative;
+  }
+}
+
+.reset-anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 2.5%;
+  text-decoration: none;
+
+  font-family: monospace;
+  font-size: 1.5rem;
+  color: #666;
+  font-weight: 900;
+  text-align: center;
+  background-image: linear-gradient($factor-color_1 50%, $factor-color_-1 0);
+  border-radius: 2rem;
+  box-shadow:
+    0 5px 15px -1px rgba(#000, .5),
+    0 1px 15px rgba(#000, .2),
+    inset 0 -5px 40px rgba(#000, .1);
+
+  &::before {
+    content: 'Attacker => Defender';
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &::after {
+    content: '[+] Effect [-]';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    writing-mode: vertical-rl;
+  }
+}
+
+.chart-note {
+  display: block;
+  font-family: monospace;
+  margin-top: .5rem;
+  padding-left: .5rem;
+  color: #666;
+  opacity: 0;
+  transition: opacity .5s;
+  text-align: start;
+
+  .data-section:hover & {
+    opacity: 1;
+  }
+}

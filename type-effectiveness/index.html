@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=.5"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Pokemon Go Type Effectiveness</title>
+    <link rel="stylesheet" href="style.css"/>
+    <meta property="og:title" content="Pokemon Go Type Effectiveness"/>
+    <meta property="og:image" content="https://rplus.github.io/Pokemon-GO/type-effectiveness/"/>
+  </head>
+  <body>
+    <h1>Pokemon Go Type Effectiveness</h1>
+    <div class="data-section section"><a class="type-anchor" id="type-Normal"></a><a class="type-anchor" id="type-Fighting"></a><a class="type-anchor" id="type-Flying"></a><a class="type-anchor" id="type-Poison"></a><a class="type-anchor" id="type-Ground"></a><a class="type-anchor" id="type-Rock"></a><a class="type-anchor" id="type-Bug"></a><a class="type-anchor" id="type-Ghost"></a><a class="type-anchor" id="type-Steel"></a><a class="type-anchor" id="type-Fire"></a><a class="type-anchor" id="type-Water"></a><a class="type-anchor" id="type-Grass"></a><a class="type-anchor" id="type-Electric"></a><a class="type-anchor" id="type-Psychic"></a><a class="type-anchor" id="type-Ice"></a><a class="type-anchor" id="type-Dragon"></a><a class="type-anchor" id="type-Dark"></a><a class="type-anchor" id="type-Fairy"></a>
+      <table class="data">
+        <tr>
+          <th></th>
+          <th data-type="Normal"><a class="type-icon type-icon__Normal" href="#type-Normal" title="Normal"></a>
+          </th>
+          <th data-type="Fighting"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting"></a>
+          </th>
+          <th data-type="Flying"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Flying"></a>
+          </th>
+          <th data-type="Poison"><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison"></a>
+          </th>
+          <th data-type="Ground"><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground"></a>
+          </th>
+          <th data-type="Rock"><a class="type-icon type-icon__Rock" href="#type-Rock" title="Rock"></a>
+          </th>
+          <th data-type="Bug"><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug"></a>
+          </th>
+          <th data-type="Ghost"><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Ghost"></a>
+          </th>
+          <th data-type="Steel"><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel"></a>
+          </th>
+          <th data-type="Fire"><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire"></a>
+          </th>
+          <th data-type="Water"><a class="type-icon type-icon__Water" href="#type-Water" title="Water"></a>
+          </th>
+          <th data-type="Grass"><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass"></a>
+          </th>
+          <th data-type="Electric"><a class="type-icon type-icon__Electric" href="#type-Electric" title="Electric"></a>
+          </th>
+          <th data-type="Psychic"><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Psychic"></a>
+          </th>
+          <th data-type="Ice"><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice"></a>
+          </th>
+          <th data-type="Dragon"><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Dragon"></a>
+          </th>
+          <th data-type="Dark"><a class="type-icon type-icon__Dark" href="#type-Dark" title="Dark"></a>
+          </th>
+          <th data-type="Fairy"><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Fairy"></a>
+          </th>
+        </tr>
+        <tr>
+          <th data-type="Normal"><a class="type-icon type-icon__Normal" href="#type-Normal" title="Normal"></a>
+          </th>
+          <td title="x1, Normal =&gt; Normal"></td>
+          <td title="x1, Normal =&gt; Fighting"></td>
+          <td title="x1, Normal =&gt; Flying"></td>
+          <td title="x1, Normal =&gt; Poison"></td>
+          <td title="x1, Normal =&gt; Ground"></td>
+          <td data-factor="-1" title="x0.625, Normal =&gt; Rock"></td>
+          <td title="x1, Normal =&gt; Bug"></td>
+          <td data-factor="-2" title="x0.39, Normal =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Normal =&gt; Steel"></td>
+          <td title="x1, Normal =&gt; Fire"></td>
+          <td title="x1, Normal =&gt; Water"></td>
+          <td title="x1, Normal =&gt; Grass"></td>
+          <td title="x1, Normal =&gt; Electric"></td>
+          <td title="x1, Normal =&gt; Psychic"></td>
+          <td title="x1, Normal =&gt; Ice"></td>
+          <td title="x1, Normal =&gt; Dragon"></td>
+          <td title="x1, Normal =&gt; Dark"></td>
+          <td title="x1, Normal =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Fighting"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting"></a>
+          </th>
+          <td data-factor="1" title="x1.6, Fighting =&gt; Normal"></td>
+          <td title="x1, Fighting =&gt; Fighting"></td>
+          <td data-factor="-1" title="x0.625, Fighting =&gt; Flying"></td>
+          <td data-factor="-1" title="x0.625, Fighting =&gt; Poison"></td>
+          <td title="x1, Fighting =&gt; Ground"></td>
+          <td data-factor="1" title="x1.6, Fighting =&gt; Rock"></td>
+          <td data-factor="-1" title="x0.625, Fighting =&gt; Bug"></td>
+          <td data-factor="-2" title="x0.39, Fighting =&gt; Ghost"></td>
+          <td data-factor="1" title="x1.6, Fighting =&gt; Steel"></td>
+          <td title="x1, Fighting =&gt; Fire"></td>
+          <td title="x1, Fighting =&gt; Water"></td>
+          <td title="x1, Fighting =&gt; Grass"></td>
+          <td title="x1, Fighting =&gt; Electric"></td>
+          <td data-factor="-1" title="x0.625, Fighting =&gt; Psychic"></td>
+          <td data-factor="1" title="x1.6, Fighting =&gt; Ice"></td>
+          <td title="x1, Fighting =&gt; Dragon"></td>
+          <td data-factor="1" title="x1.6, Fighting =&gt; Dark"></td>
+          <td data-factor="-1" title="x0.625, Fighting =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Flying"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Flying"></a>
+          </th>
+          <td title="x1, Flying =&gt; Normal"></td>
+          <td data-factor="1" title="x1.6, Flying =&gt; Fighting"></td>
+          <td title="x1, Flying =&gt; Flying"></td>
+          <td title="x1, Flying =&gt; Poison"></td>
+          <td title="x1, Flying =&gt; Ground"></td>
+          <td data-factor="-1" title="x0.625, Flying =&gt; Rock"></td>
+          <td data-factor="1" title="x1.6, Flying =&gt; Bug"></td>
+          <td title="x1, Flying =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Flying =&gt; Steel"></td>
+          <td title="x1, Flying =&gt; Fire"></td>
+          <td title="x1, Flying =&gt; Water"></td>
+          <td data-factor="1" title="x1.6, Flying =&gt; Grass"></td>
+          <td data-factor="-1" title="x0.625, Flying =&gt; Electric"></td>
+          <td title="x1, Flying =&gt; Psychic"></td>
+          <td title="x1, Flying =&gt; Ice"></td>
+          <td title="x1, Flying =&gt; Dragon"></td>
+          <td title="x1, Flying =&gt; Dark"></td>
+          <td title="x1, Flying =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Poison"><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison"></a>
+          </th>
+          <td title="x1, Poison =&gt; Normal"></td>
+          <td title="x1, Poison =&gt; Fighting"></td>
+          <td title="x1, Poison =&gt; Flying"></td>
+          <td data-factor="-1" title="x0.625, Poison =&gt; Poison"></td>
+          <td data-factor="-1" title="x0.625, Poison =&gt; Ground"></td>
+          <td data-factor="-1" title="x0.625, Poison =&gt; Rock"></td>
+          <td title="x1, Poison =&gt; Bug"></td>
+          <td data-factor="-1" title="x0.625, Poison =&gt; Ghost"></td>
+          <td data-factor="-2" title="x0.39, Poison =&gt; Steel"></td>
+          <td title="x1, Poison =&gt; Fire"></td>
+          <td title="x1, Poison =&gt; Water"></td>
+          <td data-factor="1" title="x1.6, Poison =&gt; Grass"></td>
+          <td title="x1, Poison =&gt; Electric"></td>
+          <td title="x1, Poison =&gt; Psychic"></td>
+          <td title="x1, Poison =&gt; Ice"></td>
+          <td title="x1, Poison =&gt; Dragon"></td>
+          <td title="x1, Poison =&gt; Dark"></td>
+          <td data-factor="1" title="x1.6, Poison =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Ground"><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground"></a>
+          </th>
+          <td title="x1, Ground =&gt; Normal"></td>
+          <td title="x1, Ground =&gt; Fighting"></td>
+          <td data-factor="-2" title="x0.39, Ground =&gt; Flying"></td>
+          <td data-factor="1" title="x1.6, Ground =&gt; Poison"></td>
+          <td title="x1, Ground =&gt; Ground"></td>
+          <td data-factor="1" title="x1.6, Ground =&gt; Rock"></td>
+          <td data-factor="-1" title="x0.625, Ground =&gt; Bug"></td>
+          <td title="x1, Ground =&gt; Ghost"></td>
+          <td data-factor="1" title="x1.6, Ground =&gt; Steel"></td>
+          <td data-factor="1" title="x1.6, Ground =&gt; Fire"></td>
+          <td title="x1, Ground =&gt; Water"></td>
+          <td data-factor="-1" title="x0.625, Ground =&gt; Grass"></td>
+          <td data-factor="1" title="x1.6, Ground =&gt; Electric"></td>
+          <td title="x1, Ground =&gt; Psychic"></td>
+          <td title="x1, Ground =&gt; Ice"></td>
+          <td title="x1, Ground =&gt; Dragon"></td>
+          <td title="x1, Ground =&gt; Dark"></td>
+          <td title="x1, Ground =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Rock"><a class="type-icon type-icon__Rock" href="#type-Rock" title="Rock"></a>
+          </th>
+          <td title="x1, Rock =&gt; Normal"></td>
+          <td data-factor="-1" title="x0.625, Rock =&gt; Fighting"></td>
+          <td data-factor="1" title="x1.6, Rock =&gt; Flying"></td>
+          <td title="x1, Rock =&gt; Poison"></td>
+          <td data-factor="-1" title="x0.625, Rock =&gt; Ground"></td>
+          <td title="x1, Rock =&gt; Rock"></td>
+          <td data-factor="1" title="x1.6, Rock =&gt; Bug"></td>
+          <td title="x1, Rock =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Rock =&gt; Steel"></td>
+          <td data-factor="1" title="x1.6, Rock =&gt; Fire"></td>
+          <td title="x1, Rock =&gt; Water"></td>
+          <td title="x1, Rock =&gt; Grass"></td>
+          <td title="x1, Rock =&gt; Electric"></td>
+          <td title="x1, Rock =&gt; Psychic"></td>
+          <td data-factor="1" title="x1.6, Rock =&gt; Ice"></td>
+          <td title="x1, Rock =&gt; Dragon"></td>
+          <td title="x1, Rock =&gt; Dark"></td>
+          <td title="x1, Rock =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Bug"><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug"></a>
+          </th>
+          <td title="x1, Bug =&gt; Normal"></td>
+          <td data-factor="-1" title="x0.625, Bug =&gt; Fighting"></td>
+          <td data-factor="-1" title="x0.625, Bug =&gt; Flying"></td>
+          <td data-factor="-1" title="x0.625, Bug =&gt; Poison"></td>
+          <td title="x1, Bug =&gt; Ground"></td>
+          <td title="x1, Bug =&gt; Rock"></td>
+          <td title="x1, Bug =&gt; Bug"></td>
+          <td data-factor="-1" title="x0.625, Bug =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Bug =&gt; Steel"></td>
+          <td data-factor="-1" title="x0.625, Bug =&gt; Fire"></td>
+          <td title="x1, Bug =&gt; Water"></td>
+          <td data-factor="1" title="x1.6, Bug =&gt; Grass"></td>
+          <td title="x1, Bug =&gt; Electric"></td>
+          <td data-factor="1" title="x1.6, Bug =&gt; Psychic"></td>
+          <td title="x1, Bug =&gt; Ice"></td>
+          <td title="x1, Bug =&gt; Dragon"></td>
+          <td data-factor="1" title="x1.6, Bug =&gt; Dark"></td>
+          <td data-factor="-1" title="x0.625, Bug =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Ghost"><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Ghost"></a>
+          </th>
+          <td data-factor="-2" title="x0.39, Ghost =&gt; Normal"></td>
+          <td title="x1, Ghost =&gt; Fighting"></td>
+          <td title="x1, Ghost =&gt; Flying"></td>
+          <td title="x1, Ghost =&gt; Poison"></td>
+          <td title="x1, Ghost =&gt; Ground"></td>
+          <td title="x1, Ghost =&gt; Rock"></td>
+          <td title="x1, Ghost =&gt; Bug"></td>
+          <td data-factor="1" title="x1.6, Ghost =&gt; Ghost"></td>
+          <td title="x1, Ghost =&gt; Steel"></td>
+          <td title="x1, Ghost =&gt; Fire"></td>
+          <td title="x1, Ghost =&gt; Water"></td>
+          <td title="x1, Ghost =&gt; Grass"></td>
+          <td title="x1, Ghost =&gt; Electric"></td>
+          <td data-factor="1" title="x1.6, Ghost =&gt; Psychic"></td>
+          <td title="x1, Ghost =&gt; Ice"></td>
+          <td title="x1, Ghost =&gt; Dragon"></td>
+          <td data-factor="-1" title="x0.625, Ghost =&gt; Dark"></td>
+          <td title="x1, Ghost =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Steel"><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel"></a>
+          </th>
+          <td title="x1, Steel =&gt; Normal"></td>
+          <td title="x1, Steel =&gt; Fighting"></td>
+          <td title="x1, Steel =&gt; Flying"></td>
+          <td title="x1, Steel =&gt; Poison"></td>
+          <td title="x1, Steel =&gt; Ground"></td>
+          <td data-factor="1" title="x1.6, Steel =&gt; Rock"></td>
+          <td title="x1, Steel =&gt; Bug"></td>
+          <td title="x1, Steel =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Steel =&gt; Steel"></td>
+          <td data-factor="-1" title="x0.625, Steel =&gt; Fire"></td>
+          <td data-factor="-1" title="x0.625, Steel =&gt; Water"></td>
+          <td title="x1, Steel =&gt; Grass"></td>
+          <td data-factor="-1" title="x0.625, Steel =&gt; Electric"></td>
+          <td title="x1, Steel =&gt; Psychic"></td>
+          <td data-factor="1" title="x1.6, Steel =&gt; Ice"></td>
+          <td title="x1, Steel =&gt; Dragon"></td>
+          <td title="x1, Steel =&gt; Dark"></td>
+          <td data-factor="1" title="x1.6, Steel =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Fire"><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire"></a>
+          </th>
+          <td title="x1, Fire =&gt; Normal"></td>
+          <td title="x1, Fire =&gt; Fighting"></td>
+          <td title="x1, Fire =&gt; Flying"></td>
+          <td title="x1, Fire =&gt; Poison"></td>
+          <td title="x1, Fire =&gt; Ground"></td>
+          <td data-factor="-1" title="x0.625, Fire =&gt; Rock"></td>
+          <td data-factor="1" title="x1.6, Fire =&gt; Bug"></td>
+          <td title="x1, Fire =&gt; Ghost"></td>
+          <td data-factor="1" title="x1.6, Fire =&gt; Steel"></td>
+          <td data-factor="-1" title="x0.625, Fire =&gt; Fire"></td>
+          <td data-factor="-1" title="x0.625, Fire =&gt; Water"></td>
+          <td data-factor="1" title="x1.6, Fire =&gt; Grass"></td>
+          <td title="x1, Fire =&gt; Electric"></td>
+          <td title="x1, Fire =&gt; Psychic"></td>
+          <td data-factor="1" title="x1.6, Fire =&gt; Ice"></td>
+          <td data-factor="-1" title="x0.625, Fire =&gt; Dragon"></td>
+          <td title="x1, Fire =&gt; Dark"></td>
+          <td title="x1, Fire =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Water"><a class="type-icon type-icon__Water" href="#type-Water" title="Water"></a>
+          </th>
+          <td title="x1, Water =&gt; Normal"></td>
+          <td title="x1, Water =&gt; Fighting"></td>
+          <td title="x1, Water =&gt; Flying"></td>
+          <td title="x1, Water =&gt; Poison"></td>
+          <td data-factor="1" title="x1.6, Water =&gt; Ground"></td>
+          <td data-factor="1" title="x1.6, Water =&gt; Rock"></td>
+          <td title="x1, Water =&gt; Bug"></td>
+          <td title="x1, Water =&gt; Ghost"></td>
+          <td title="x1, Water =&gt; Steel"></td>
+          <td data-factor="1" title="x1.6, Water =&gt; Fire"></td>
+          <td data-factor="-1" title="x0.625, Water =&gt; Water"></td>
+          <td data-factor="-1" title="x0.625, Water =&gt; Grass"></td>
+          <td title="x1, Water =&gt; Electric"></td>
+          <td title="x1, Water =&gt; Psychic"></td>
+          <td title="x1, Water =&gt; Ice"></td>
+          <td data-factor="-1" title="x0.625, Water =&gt; Dragon"></td>
+          <td title="x1, Water =&gt; Dark"></td>
+          <td title="x1, Water =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Grass"><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass"></a>
+          </th>
+          <td title="x1, Grass =&gt; Normal"></td>
+          <td title="x1, Grass =&gt; Fighting"></td>
+          <td data-factor="-1" title="x0.625, Grass =&gt; Flying"></td>
+          <td data-factor="-1" title="x0.625, Grass =&gt; Poison"></td>
+          <td data-factor="1" title="x1.6, Grass =&gt; Ground"></td>
+          <td data-factor="1" title="x1.6, Grass =&gt; Rock"></td>
+          <td data-factor="-1" title="x0.625, Grass =&gt; Bug"></td>
+          <td title="x1, Grass =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Grass =&gt; Steel"></td>
+          <td data-factor="-1" title="x0.625, Grass =&gt; Fire"></td>
+          <td data-factor="1" title="x1.6, Grass =&gt; Water"></td>
+          <td data-factor="-1" title="x0.625, Grass =&gt; Grass"></td>
+          <td title="x1, Grass =&gt; Electric"></td>
+          <td title="x1, Grass =&gt; Psychic"></td>
+          <td title="x1, Grass =&gt; Ice"></td>
+          <td data-factor="-1" title="x0.625, Grass =&gt; Dragon"></td>
+          <td title="x1, Grass =&gt; Dark"></td>
+          <td title="x1, Grass =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Electric"><a class="type-icon type-icon__Electric" href="#type-Electric" title="Electric"></a>
+          </th>
+          <td title="x1, Electric =&gt; Normal"></td>
+          <td title="x1, Electric =&gt; Fighting"></td>
+          <td data-factor="1" title="x1.6, Electric =&gt; Flying"></td>
+          <td title="x1, Electric =&gt; Poison"></td>
+          <td data-factor="-2" title="x0.39, Electric =&gt; Ground"></td>
+          <td title="x1, Electric =&gt; Rock"></td>
+          <td title="x1, Electric =&gt; Bug"></td>
+          <td title="x1, Electric =&gt; Ghost"></td>
+          <td title="x1, Electric =&gt; Steel"></td>
+          <td title="x1, Electric =&gt; Fire"></td>
+          <td data-factor="1" title="x1.6, Electric =&gt; Water"></td>
+          <td data-factor="-1" title="x0.625, Electric =&gt; Grass"></td>
+          <td data-factor="-1" title="x0.625, Electric =&gt; Electric"></td>
+          <td title="x1, Electric =&gt; Psychic"></td>
+          <td title="x1, Electric =&gt; Ice"></td>
+          <td data-factor="-1" title="x0.625, Electric =&gt; Dragon"></td>
+          <td title="x1, Electric =&gt; Dark"></td>
+          <td title="x1, Electric =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Psychic"><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Psychic"></a>
+          </th>
+          <td title="x1, Psychic =&gt; Normal"></td>
+          <td data-factor="1" title="x1.6, Psychic =&gt; Fighting"></td>
+          <td title="x1, Psychic =&gt; Flying"></td>
+          <td data-factor="1" title="x1.6, Psychic =&gt; Poison"></td>
+          <td title="x1, Psychic =&gt; Ground"></td>
+          <td title="x1, Psychic =&gt; Rock"></td>
+          <td title="x1, Psychic =&gt; Bug"></td>
+          <td title="x1, Psychic =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Psychic =&gt; Steel"></td>
+          <td title="x1, Psychic =&gt; Fire"></td>
+          <td title="x1, Psychic =&gt; Water"></td>
+          <td title="x1, Psychic =&gt; Grass"></td>
+          <td title="x1, Psychic =&gt; Electric"></td>
+          <td data-factor="-1" title="x0.625, Psychic =&gt; Psychic"></td>
+          <td title="x1, Psychic =&gt; Ice"></td>
+          <td title="x1, Psychic =&gt; Dragon"></td>
+          <td data-factor="-2" title="x0.39, Psychic =&gt; Dark"></td>
+          <td title="x1, Psychic =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Ice"><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice"></a>
+          </th>
+          <td title="x1, Ice =&gt; Normal"></td>
+          <td title="x1, Ice =&gt; Fighting"></td>
+          <td data-factor="1" title="x1.6, Ice =&gt; Flying"></td>
+          <td title="x1, Ice =&gt; Poison"></td>
+          <td data-factor="1" title="x1.6, Ice =&gt; Ground"></td>
+          <td title="x1, Ice =&gt; Rock"></td>
+          <td title="x1, Ice =&gt; Bug"></td>
+          <td title="x1, Ice =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Ice =&gt; Steel"></td>
+          <td data-factor="-1" title="x0.625, Ice =&gt; Fire"></td>
+          <td data-factor="-1" title="x0.625, Ice =&gt; Water"></td>
+          <td data-factor="1" title="x1.6, Ice =&gt; Grass"></td>
+          <td title="x1, Ice =&gt; Electric"></td>
+          <td title="x1, Ice =&gt; Psychic"></td>
+          <td data-factor="-1" title="x0.625, Ice =&gt; Ice"></td>
+          <td data-factor="1" title="x1.6, Ice =&gt; Dragon"></td>
+          <td title="x1, Ice =&gt; Dark"></td>
+          <td title="x1, Ice =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Dragon"><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Dragon"></a>
+          </th>
+          <td title="x1, Dragon =&gt; Normal"></td>
+          <td title="x1, Dragon =&gt; Fighting"></td>
+          <td title="x1, Dragon =&gt; Flying"></td>
+          <td title="x1, Dragon =&gt; Poison"></td>
+          <td title="x1, Dragon =&gt; Ground"></td>
+          <td title="x1, Dragon =&gt; Rock"></td>
+          <td title="x1, Dragon =&gt; Bug"></td>
+          <td title="x1, Dragon =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Dragon =&gt; Steel"></td>
+          <td title="x1, Dragon =&gt; Fire"></td>
+          <td title="x1, Dragon =&gt; Water"></td>
+          <td title="x1, Dragon =&gt; Grass"></td>
+          <td title="x1, Dragon =&gt; Electric"></td>
+          <td title="x1, Dragon =&gt; Psychic"></td>
+          <td title="x1, Dragon =&gt; Ice"></td>
+          <td data-factor="1" title="x1.6, Dragon =&gt; Dragon"></td>
+          <td title="x1, Dragon =&gt; Dark"></td>
+          <td data-factor="-2" title="x0.39, Dragon =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Dark"><a class="type-icon type-icon__Dark" href="#type-Dark" title="Dark"></a>
+          </th>
+          <td title="x1, Dark =&gt; Normal"></td>
+          <td data-factor="-1" title="x0.625, Dark =&gt; Fighting"></td>
+          <td title="x1, Dark =&gt; Flying"></td>
+          <td title="x1, Dark =&gt; Poison"></td>
+          <td title="x1, Dark =&gt; Ground"></td>
+          <td title="x1, Dark =&gt; Rock"></td>
+          <td title="x1, Dark =&gt; Bug"></td>
+          <td data-factor="1" title="x1.6, Dark =&gt; Ghost"></td>
+          <td title="x1, Dark =&gt; Steel"></td>
+          <td title="x1, Dark =&gt; Fire"></td>
+          <td title="x1, Dark =&gt; Water"></td>
+          <td title="x1, Dark =&gt; Grass"></td>
+          <td title="x1, Dark =&gt; Electric"></td>
+          <td data-factor="1" title="x1.6, Dark =&gt; Psychic"></td>
+          <td title="x1, Dark =&gt; Ice"></td>
+          <td title="x1, Dark =&gt; Dragon"></td>
+          <td data-factor="-1" title="x0.625, Dark =&gt; Dark"></td>
+          <td data-factor="-1" title="x0.625, Dark =&gt; Fairy"></td>
+        </tr>
+        <tr>
+          <th data-type="Fairy"><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Fairy"></a>
+          </th>
+          <td title="x1, Fairy =&gt; Normal"></td>
+          <td data-factor="1" title="x1.6, Fairy =&gt; Fighting"></td>
+          <td title="x1, Fairy =&gt; Flying"></td>
+          <td data-factor="-1" title="x0.625, Fairy =&gt; Poison"></td>
+          <td title="x1, Fairy =&gt; Ground"></td>
+          <td title="x1, Fairy =&gt; Rock"></td>
+          <td title="x1, Fairy =&gt; Bug"></td>
+          <td title="x1, Fairy =&gt; Ghost"></td>
+          <td data-factor="-1" title="x0.625, Fairy =&gt; Steel"></td>
+          <td data-factor="-1" title="x0.625, Fairy =&gt; Fire"></td>
+          <td title="x1, Fairy =&gt; Water"></td>
+          <td title="x1, Fairy =&gt; Grass"></td>
+          <td title="x1, Fairy =&gt; Electric"></td>
+          <td title="x1, Fairy =&gt; Psychic"></td>
+          <td title="x1, Fairy =&gt; Ice"></td>
+          <td data-factor="1" title="x1.6, Fairy =&gt; Dragon"></td>
+          <td data-factor="1" title="x1.6, Fairy =&gt; Dark"></td>
+          <td title="x1, Fairy =&gt; Fairy"></td>
+        </tr>
+      </table>
+      <div class="chart"><a class="reset-anchor" href="###">
+          <div class="part-type-y"></div>
+          <div class="part-type-x"></div></a>
+        <div class="type-chart type-chart__Normal"><a class="target-type type-icon type-icon__Normal" href="###" title="Normal"></a>
+          <div class="type-panel" data-effect="atk-p">
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Rock" href="#type-Rock" title="Normal =&gt; Rock, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Normal =&gt; Ghost, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Normal =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Normal, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Ghost =&gt; Normal, x0.39" data-factor="-2" style="order: -2"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Fighting"><a class="target-type type-icon type-icon__Fighting" href="###" title="Fighting"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Normal" href="#type-Normal" title="Fighting =&gt; Normal, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Fighting =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Fighting =&gt; Steel, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Fighting =&gt; Ice, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Fighting =&gt; Dark, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Fighting =&gt; Flying, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Poison" href="#type-Poison" title="Fighting =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Fighting =&gt; Bug, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Fighting =&gt; Ghost, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Fighting =&gt; Psychic, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Fighting =&gt; Fairy, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Flying =&gt; Fighting, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Psychic =&gt; Fighting, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Fairy =&gt; Fighting, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Rock" href="#type-Rock" title="Rock =&gt; Fighting, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Fighting, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Dark =&gt; Fighting, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Flying"><a class="target-type type-icon type-icon__Flying" href="###" title="Flying"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Flying =&gt; Fighting, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Flying =&gt; Bug, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Flying =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Rock" href="#type-Rock" title="Flying =&gt; Rock, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Flying =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Flying =&gt; Electric, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Rock" href="#type-Rock" title="Rock =&gt; Flying, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Electric =&gt; Flying, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice =&gt; Flying, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Flying, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground =&gt; Flying, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Flying, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Flying, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Poison"><a class="target-type type-icon type-icon__Poison" href="###" title="Poison"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Grass" href="#type-Grass" title="Poison =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Poison =&gt; Fairy, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ground" href="#type-Ground" title="Poison =&gt; Ground, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Poison =&gt; Rock, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Poison =&gt; Ghost, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Poison =&gt; Steel, x0.39" data-factor="-2" style="order: -2"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground =&gt; Poison, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Psychic =&gt; Poison, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Fairy =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Ground"><a class="target-type type-icon type-icon__Ground" href="###" title="Ground"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Poison" href="#type-Poison" title="Ground =&gt; Poison, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Ground =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Ground =&gt; Steel, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Ground =&gt; Fire, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Ground =&gt; Electric, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Ground =&gt; Flying, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Ground =&gt; Bug, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Ground =&gt; Grass, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Water" href="#type-Water" title="Water =&gt; Ground, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Ground, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice =&gt; Ground, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison =&gt; Ground, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Rock =&gt; Ground, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Electric =&gt; Ground, x0.39" data-factor="-2" style="order: -2"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Rock"><a class="target-type type-icon type-icon__Rock" href="###" title="Rock"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Rock =&gt; Flying, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Rock =&gt; Bug, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Rock =&gt; Fire, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Rock =&gt; Ice, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Rock =&gt; Fighting, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ground" href="#type-Ground" title="Rock =&gt; Ground, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Rock =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Water =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Normal" href="#type-Normal" title="Normal =&gt; Rock, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Flying" href="#type-Flying" title="Flying =&gt; Rock, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison =&gt; Rock, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire =&gt; Rock, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Bug"><a class="target-type type-icon type-icon__Bug" href="###" title="Bug"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Grass" href="#type-Grass" title="Bug =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Bug =&gt; Psychic, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Bug =&gt; Dark, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Bug =&gt; Fighting, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Flying" href="#type-Flying" title="Bug =&gt; Flying, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Poison" href="#type-Poison" title="Bug =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Bug =&gt; Ghost, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Bug =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Bug =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Bug =&gt; Fairy, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Flying =&gt; Bug, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Rock =&gt; Bug, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire =&gt; Bug, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Bug, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground =&gt; Bug, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Bug, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Ghost"><a class="target-type type-icon type-icon__Ghost" href="###" title="Ghost"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Ghost =&gt; Ghost, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Ghost =&gt; Psychic, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Normal" href="#type-Normal" title="Ghost =&gt; Normal, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Ghost =&gt; Dark, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Ghost =&gt; Ghost, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Dark =&gt; Ghost, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Normal" href="#type-Normal" title="Normal =&gt; Ghost, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Ghost, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison =&gt; Ghost, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Ghost, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Steel"><a class="target-type type-icon type-icon__Steel" href="###" title="Steel"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Rock" href="#type-Rock" title="Steel =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Steel =&gt; Ice, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Steel =&gt; Fairy, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Steel =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Steel =&gt; Water, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Steel =&gt; Electric, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Steel, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground =&gt; Steel, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire =&gt; Steel, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Normal" href="#type-Normal" title="Normal =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Flying" href="#type-Flying" title="Flying =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison =&gt; Steel, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Rock =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Psychic =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Dragon =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Fairy =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Fire"><a class="target-type type-icon type-icon__Fire" href="###" title="Fire"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Bug" href="#type-Bug" title="Fire =&gt; Bug, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Fire =&gt; Steel, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Fire =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Fire =&gt; Ice, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Rock" href="#type-Rock" title="Fire =&gt; Rock, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Fire =&gt; Water, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Fire =&gt; Dragon, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground =&gt; Fire, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Rock =&gt; Fire, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Water =&gt; Fire, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Fairy =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Water"><a class="target-type type-icon type-icon__Water" href="###" title="Water"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Ground" href="#type-Ground" title="Water =&gt; Ground, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Water =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Water =&gt; Fire, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Water" href="#type-Water" title="Water =&gt; Water, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Water =&gt; Grass, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Water =&gt; Dragon, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Water, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Electric =&gt; Water, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel =&gt; Water, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire =&gt; Water, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Water =&gt; Water, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice =&gt; Water, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Grass"><a class="target-type type-icon type-icon__Grass" href="###" title="Grass"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Ground" href="#type-Ground" title="Grass =&gt; Ground, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Grass =&gt; Rock, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Grass =&gt; Water, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Grass =&gt; Flying, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Poison" href="#type-Poison" title="Grass =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Grass =&gt; Bug, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Grass =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Grass =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Grass, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Grass =&gt; Dragon, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Flying =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground =&gt; Grass, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Water =&gt; Grass, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Grass, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Electric =&gt; Grass, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Electric"><a class="target-type type-icon type-icon__Electric" href="###" title="Electric"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Electric =&gt; Flying, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Electric =&gt; Water, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Ground" href="#type-Ground" title="Electric =&gt; Ground, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Electric =&gt; Grass, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Electric =&gt; Electric, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Electric =&gt; Dragon, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ground =&gt; Electric, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Flying =&gt; Electric, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel =&gt; Electric, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Electric =&gt; Electric, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Psychic"><a class="target-type type-icon type-icon__Psychic" href="###" title="Psychic"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Psychic =&gt; Fighting, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Poison" href="#type-Poison" title="Psychic =&gt; Poison, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Steel" href="#type-Steel" title="Psychic =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Psychic =&gt; Psychic, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Psychic =&gt; Dark, x0.39" data-factor="-2" style="order: -2"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Psychic, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Ghost =&gt; Psychic, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Dark =&gt; Psychic, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Psychic, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Psychic =&gt; Psychic, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Ice"><a class="target-type type-icon type-icon__Ice" href="###" title="Ice"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Flying" href="#type-Flying" title="Ice =&gt; Flying, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Ground" href="#type-Ground" title="Ice =&gt; Ground, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Ice =&gt; Grass, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Ice =&gt; Dragon, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Steel" href="#type-Steel" title="Ice =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Ice =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Ice =&gt; Water, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice =&gt; Ice, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Ice, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Rock" href="#type-Rock" title="Rock =&gt; Ice, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel =&gt; Ice, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire =&gt; Ice, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice =&gt; Ice, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Dragon"><a class="target-type type-icon type-icon__Dragon" href="###" title="Dragon"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Dragon =&gt; Dragon, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Steel" href="#type-Steel" title="Dragon =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Dragon =&gt; Fairy, x0.39" data-factor="-2" style="order: -2"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Ice" href="#type-Ice" title="Ice =&gt; Dragon, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Dragon =&gt; Dragon, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Fairy =&gt; Dragon, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fire =&gt; Dragon, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Water" href="#type-Water" title="Water =&gt; Dragon, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Grass" href="#type-Grass" title="Grass =&gt; Dragon, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Electric" href="#type-Electric" title="Electric =&gt; Dragon, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Dark"><a class="target-type type-icon type-icon__Dark" href="###" title="Dark"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Dark =&gt; Ghost, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Dark =&gt; Psychic, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Dark =&gt; Fighting, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Dark =&gt; Dark, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Dark =&gt; Fairy, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Dark, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Dark, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Fairy" href="#type-Fairy" title="Fairy =&gt; Dark, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Ghost" href="#type-Ghost" title="Ghost =&gt; Dark, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Psychic" href="#type-Psychic" title="Psychic =&gt; Dark, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Dark =&gt; Dark, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+        <div class="type-chart type-chart__Fairy"><a class="target-type type-icon type-icon__Fairy" href="###" title="Fairy"></a>
+          <div class="type-panel" data-effect="atk-p"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fairy =&gt; Fighting, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Fairy =&gt; Dragon, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Fairy =&gt; Dark, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="atk-n"><a class="type-icon type-icon__Poison" href="#type-Poison" title="Fairy =&gt; Poison, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Fairy =&gt; Steel, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Fire" href="#type-Fire" title="Fairy =&gt; Fire, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-p"><a class="type-icon type-icon__Poison" href="#type-Poison" title="Poison =&gt; Fairy, x1.6" data-factor="1" style="order: 1"></a><a class="type-icon type-icon__Steel" href="#type-Steel" title="Steel =&gt; Fairy, x1.6" data-factor="1" style="order: 1"></a>
+          </div>
+          <div class="type-panel" data-effect="def-n"><a class="type-icon type-icon__Fighting" href="#type-Fighting" title="Fighting =&gt; Fairy, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Bug" href="#type-Bug" title="Bug =&gt; Fairy, x0.625" data-factor="-1" style="order: -1"></a><a class="type-icon type-icon__Dragon" href="#type-Dragon" title="Dragon =&gt; Fairy, x0.39" data-factor="-2" style="order: -2"></a><a class="type-icon type-icon__Dark" href="#type-Dark" title="Dark =&gt; Fairy, x0.625" data-factor="-1" style="order: -1"></a>
+          </div>
+        </div>
+      </div>
+      <div class="chart-note">^ Click type icon to switch into Chart view. :)</div>
+    </div>
+    <dl class="label section">
+          <dt class="factor-label" data-factor="1"></dt>
+          <dd class="factor">x1.6</dd>
+          <dt class="factor-label" data-factor="-1"></dt>
+          <dd class="factor">x0.625</dd>
+          <dt class="factor-label" data-factor="-2"></dt>
+          <dd class="factor">x0.39</dd>
+    </dl>
+    <ul class="note factor section">
+      <li><strong>x0.24</strong> = x0.39 x0.625</li>
+      <li><strong>x2.56</strong> = x1.6 x1.6</li>
+      <li><strong>x3.07</strong> = x2.56 x1.2<br/>STAB(Same Type Attack Bonus): x1.2</li>
+    </ul>
+  </body>
+</html>

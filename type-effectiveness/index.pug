@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+html(lang="en" dir="ltr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=.5")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Pokemon Go Type Effectiveness
+    link(rel="stylesheet", href="style.css")
+    meta(property="og:title" content="Pokemon Go Type Effectiveness")
+    meta(property="og:image" content="https://rplus.github.io/Pokemon-GO/type-effectiveness/")
+
+  body
+    include _types.pug
+
+    h1 Pokemon Go Type Effectiveness
+
+    mixin type-link(type)
+      a(
+        href=`#type-${type}`
+        class=`type-icon type-icon__${type}`
+        title=type
+      )
+
+    .data-section.section
+      each type in types
+        if type
+          a(id=`type-${type}` class="type-anchor")
+      table.data
+        each atkType in types
+          tr
+            if !atkType
+              each defType in types
+                if (defType)
+                  th(data-type=defType)
+                    +type-link(defType)
+                else
+                  th
+
+            else
+              each defType in types
+                if !defType
+                  th(data-type=atkType)
+                    +type-link(atkType)
+                else
+                  - var factor = attckEffectiveness[atkType][defType];
+                  - var eff = effectivenessTable[factor] || 'x1'
+                  td(
+                    data-factor=factor
+                    title=`${eff}, ${atkType} => ${defType}`
+                  )
+      .chart
+        a(href="###").reset-anchor
+          .part-type-y
+          .part-type-x
+        each typeAD, type in chart
+          div(class=`type-chart type-chart__${type}`)
+            a.target-type(
+              class=`type-icon type-icon__${type}`
+              href="###"
+              title= type
+            )
+            each targetArr, effect in typeAD
+              div.type-panel(data-effect=effect)
+                each targetType in targetArr
+                  -
+                    var titleAD = [type, targetType[0]];
+                    if (effect.indexOf('def') !== -1) {
+                      titleAD = titleAD.reverse();
+                    }
+                  a(
+                    class=`type-icon type-icon__${targetType[0]}`
+                    href=`#type-${targetType[0]}`
+                    title= `${titleAD.join(' => ')}, ${effectivenessTable[targetType[1]]}`
+                    data-factor= targetType[1]
+                    style=`order: ${targetType[1]}`
+                  )
+      .chart-note
+        | ^ Click type icon to switch into Chart view. :)
+
+    mixin label(n)
+      dt.factor-label(data-factor=n)
+      dd.factor x#{f[n]}
+
+    dl.label.section
+      +label(1)
+      +label(-1)
+      +label(-2)
+
+    ul.note.factor.section
+      li
+        strong x#{+(f[-2] * f[-1]).toFixed(2)}
+        |  = x#{f[-2]} x#{f[-1]}
+      li
+        strong x#{+(f[1] * f[1]).toFixed(2)}
+        |  = x#{f[1]} x#{f[1]}
+      li
+        strong x#{+(f[2] * 1.2).toFixed(2)}
+        |  = x#{f[2]} x1.2
+        br
+        | STAB(Same Type Attack Bonus): x1.2
