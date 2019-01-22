@@ -308,6 +308,30 @@ table {
     -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
     writing-mode: vertical-rl; }
+  .reset-anchor .part-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: rgba(0, 0, 0, 0.1);
+    font-size: 3rem; }
+    .reset-anchor .part-effect::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 1em;
+      border-left: 1em solid transparent;
+      border-right: 1em solid transparent;
+      border-bottom: 1em solid; }
+    .reset-anchor .part-effect::after {
+      content: '';
+      position: absolute;
+      right: 1em;
+      bottom: 10%;
+      border-top: 1em solid;
+      border-left: 1em solid transparent;
+      border-right: 1em solid transparent; }
 
 .chart-note {
   display: block;
