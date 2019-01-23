@@ -226,7 +226,7 @@ table {
   display: -ms-grid;
   display: grid;
   grid-template: 'def-p . atk-p' 1fr '.     c     .' 10% 'def-n . atk-n' 1fr / 1fr 10% 1fr;
-  grid-gap: .5rem; }
+  grid-gap: .4rem .2rem; }
 
 .type-chart {
   position: absolute;
@@ -243,9 +243,10 @@ table {
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center;
-    font-size: 5rem; }
+    font-size: 5rem;
+    text-decoration: none; }
   .type-chart a {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.2);
     filter: drop-shadow(0 5px 4px);
     background-color: unset; }
     .type-chart a[data-factor="-2"] {
@@ -274,7 +275,7 @@ table {
   .type-panel[data-effect="def-n"] {
     grid-area: def-n; }
   .type-panel > .type-icon {
-    margin: .25rem;
+    margin: .35rem .25rem;
     font-size: 3rem;
     pointer-events: auto;
     position: relative; }
@@ -304,6 +305,7 @@ table {
     content: '[+] Effect [-]';
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
@@ -314,7 +316,7 @@ table {
     left: 0;
     right: 0;
     bottom: 0;
-    color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.05);
     font-size: 3rem; }
     .reset-anchor .part-effect::before {
       content: '';
