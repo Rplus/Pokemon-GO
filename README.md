@@ -8,7 +8,7 @@
 ### ● Shiny Checklist
 
 > <https://rplus.github.io/Pokemon-shiny/>  
-> inspired from LeekDuck's shiny graphic
+> inspired from [LeekDuck's shiny graphic](https://leekduck.com/shinylist/)
 
 
 ### ● Pokémons CP list
@@ -23,7 +23,12 @@
 > 泛用型簡易 Pokemon 列表，可自訂說明用的標頭
 
 
-### ● Task map
+### ● 巢穴地圖 PM nest map
+> <https://rplus.github.io/PM-nest-map/>
+> 使用者可更新的巢穴分佈地圖
+
+
+### ● 任務地圖 Task map
 
 > <https://rplus.github.io/PMGO-tasks-map/>  
 > fork from [5upergeo/PMGO-tasks-map](https://github.com/5upergeo/PMGO-tasks-map)
@@ -49,7 +54,7 @@
 #### ● PokemonGo-data
 
 > <https://github.com/Rplus/PokemonGo-data>  
-> do something with [GAME_MASTER.json](https://github.com/pokemongo-dev-contrib/pokemongo-game-master)
+> do something with [GAME_MASTER.json](https://github.com/ZeChrales/PogoAssets/tree/master/gamemaster)
 
 
 歡迎到 Facebook 公開活動裡討論及給予迴饋：  
