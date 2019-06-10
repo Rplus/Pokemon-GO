@@ -9,8 +9,7 @@
 <title>Search String Generateor</title>
 <script defer src="main.src.js"></script>
 <style>
-	.label,
-	label {
+	.label {
 	  display: inline-block;
 	  display: block;
 	  margin-bottom: .5em;
@@ -24,11 +23,14 @@
 </style>
 </head>
 <body>
-<label>
-	Pokemon:
-	<input id="pmname" type="text" list="pokemon" required oninput="calculate()">
-	<datalist id="pokemon"></datalist>
-</label>
+<div class="label">
+	<label>
+		Pokemon:
+		<input id="pmname" type="text" list="pokemon" required oninput="calculate()">
+		<datalist id="pokemon"></datalist>
+	</label>
+</div>
+<div class="label">
 <label>
 	Minimum %:
 	<select id="miniv" onchange="calculate()">
@@ -80,6 +82,7 @@
 		<option value="0">0</option>
 	</select>
 </label>
+</div>
 <div class="label">
 	Min IVs (A/D/H):
 	<select id="minatk" onchange="calculate()">
@@ -225,24 +228,28 @@
 		<option value="39">40</option>
 	</select>
 </div>
-<label>
-	Language:
-	<select id="lang" onchange="langChange()">
-		<option value="en,cp,hp">English</option>
-		<option value="ja,cp,hp">Japanese</option>
-		<option value="fr,pc,pv">French</option>
-		<option value="es,pc,puntos de salud">Spanish</option>
-		<option value="de,wp,kp">German</option>
-		<option value="il,pl,punti salute">Italian</option>
-		<option value="ko,cp,hp">Korean</option>
-		<option value="zh,cp,hp">Chinese</option>
-		<option value="pt,pc,ps">Portuguese</option>
-	</select>
-</label>
-<label>
-	Trash String:
-	<input id="trash" type="checkbox" onchange="calculate()">
-</label>
+<div class="label">
+	<label>
+		Language:
+		<select id="lang" onchange="langChange()">
+			<option value="en,cp,hp">English</option>
+			<option value="ja,cp,hp">Japanese</option>
+			<option value="fr,pc,pv">French</option>
+			<option value="es,pc,puntos de salud">Spanish</option>
+			<option value="de,wp,kp">German</option>
+			<option value="il,pl,punti salute">Italian</option>
+			<option value="ko,cp,hp">Korean</option>
+			<option value="zh,cp,hp">Chinese</option>
+			<option value="pt,pc,ps">Portuguese</option>
+		</select>
+	</label>
+</div>
+<div class="label">
+	<label>
+		Trash String:
+		<input id="trash" type="checkbox" onchange="calculate()">
+	</label>
+</div>
 <hr>
 <button onclick="copy()">Click to Copy!</button>
 <br>
