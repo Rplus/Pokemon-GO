@@ -1,18 +1,6 @@
-var cpm = [0.094, 0.16639787, 0.21573247, 0.25572005, 0.29024988, 0.3210876, 0.34921268, 0.3752356, 0.39956728, 0.4225, 0.44310755, 0.4627984, 0.48168495, 0.49985844, 0.51739395, 0.5343543, 0.5507927, 0.5667545, 0.5822789, 0.5974, 0.6121573, 0.6265671, 0.64065295, 0.65443563, 0.667934, 0.6811649, 0.69414365, 0.7068842, 0.7193991, 0.7317, 0.7377695, 0.74378943, 0.74976104, 0.7556855, 0.76156384, 0.76739717, 0.7731865, 0.77893275, 0.784637, 0.7903]; //corrected (full levels only)
+var $ = document.getElementById.bind(document);
 
-Promise.all(
-  ['pm-name.json', 'pm-data-with-ads.json']
-    .map( j => fetch(j).then( d => d.json() ) )
-).then(data => {
-  window.pm = {
-    names: data[0],
-    data: data[1].map(i => {
-      i.uid = i.dex + ( i.isotope ? `-${i.isotope}` : '');
-      return i;
-    }),
-  };
-  initOptions();
-});
+initOptions();
 
 function initOptions () {
   if (!window.pm) { return; }
@@ -26,8 +14,6 @@ function initOptions () {
     return `<option value="${n}" data-uid="${i.uid}">#${i.dex} ${n}</option>`
   }).join('');
 };
-
-var $ = document.getElementById.bind(document);
 
 function checkpm() {
   let option = [...pokemon.options].find(option => option.value === pmname.value);
