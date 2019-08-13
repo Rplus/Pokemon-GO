@@ -97,7 +97,7 @@ table {
   @for $var from 1 through length($types) {
     $_type: nth($types, $var);
     &.type-icon__#{$_type} {
-      --i: $var;
+      --i: #{$var};
 
       #type-#{$_type}:target ~ table.data & {
         background-color: #ff0;
@@ -234,6 +234,18 @@ table {
     align-self: center;
     font-size: 5rem;
     text-decoration: none;
+
+    &::before {
+      content: '/ ' attr(title) ' /';
+      position: absolute;
+      top: -5em;
+      left: 50%;
+      font-size: .5em;
+      font-weight: bolder;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      pointer-events: none;
+    }
   }
 
   a {
@@ -318,7 +330,7 @@ table {
   .part-effect {
     position: absolute;
     top: 0;
-    left: 0;
+    // left: 0;
     right: 0;
     bottom: 0;
     color: rgba(#000, .05);

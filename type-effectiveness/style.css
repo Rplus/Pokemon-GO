@@ -32,6 +32,7 @@ table {
   .data th[data-type],
   .data td {
     position: relative;
+    -webkit-box-shadow: inset 0 0 1px #ccc;
     box-shadow: inset 0 0 1px #ccc; }
   .data td::before, .data td::after, .data th::before, .data th::after {
     content: '';
@@ -42,6 +43,7 @@ table {
     bottom: 0;
     z-index: -1;
     background-color: #ccc;
+    -webkit-box-shadow: inset 0 0 0 1px;
     box-shadow: inset 0 0 0 1px;
     opacity: 0; }
   .data td::before, .data th::before {
@@ -143,6 +145,7 @@ table {
   left: 0; }
 
 .data [data-factor] {
+  -webkit-box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.15); }
 
 [data-factor="-2"] {
@@ -181,8 +184,10 @@ table {
     writing-mode: vertical-rl; }
 
 .label {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   margin: 1em auto;
@@ -208,6 +213,7 @@ table {
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 .chart {
@@ -226,6 +232,8 @@ table {
 #type-Bug:target ~ .chart > .type-chart.type-chart__Bug, #type-Dark:target ~ .chart > .type-chart.type-chart__Dark, #type-Dragon:target ~ .chart > .type-chart.type-chart__Dragon, #type-Electric:target ~ .chart > .type-chart.type-chart__Electric, #type-Fairy:target ~ .chart > .type-chart.type-chart__Fairy, #type-Fighting:target ~ .chart > .type-chart.type-chart__Fighting, #type-Fire:target ~ .chart > .type-chart.type-chart__Fire, #type-Flying:target ~ .chart > .type-chart.type-chart__Flying, #type-Ghost:target ~ .chart > .type-chart.type-chart__Ghost, #type-Grass:target ~ .chart > .type-chart.type-chart__Grass, #type-Ground:target ~ .chart > .type-chart.type-chart__Ground, #type-Ice:target ~ .chart > .type-chart.type-chart__Ice, #type-Normal:target ~ .chart > .type-chart.type-chart__Normal, #type-Poison:target ~ .chart > .type-chart.type-chart__Poison, #type-Psychic:target ~ .chart > .type-chart.type-chart__Psychic, #type-Rock:target ~ .chart > .type-chart.type-chart__Rock, #type-Steel:target ~ .chart > .type-chart.type-chart__Steel, #type-Water:target ~ .chart > .type-chart.type-chart__Water {
   display: -ms-grid;
   display: grid;
+  -ms-grid-rows: 1fr .4rem 10% .4rem 1fr;
+  -ms-grid-columns: 1fr .2rem 10% .2rem 1fr;
   grid-template: 'def-p . atk-p' 1fr '.     c     .' 10% 'def-n . atk-n' 1fr / 1fr 10% 1fr;
   grid-gap: .4rem .2rem; }
 
@@ -239,26 +247,44 @@ table {
   padding: 5%;
   pointer-events: none; }
   .type-chart .target-type {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
     grid-area: c;
+    -ms-grid-column-align: center;
     justify-self: center;
-    -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center;
     font-size: 5rem;
     text-decoration: none; }
+    .type-chart .target-type::before {
+      content: "/ " attr(title) " /";
+      position: absolute;
+      top: -5em;
+      left: 50%;
+      font-size: .5em;
+      font-weight: bolder;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      white-space: nowrap;
+      pointer-events: none; }
   .type-chart a {
     color: rgba(0, 0, 0, 0.2);
+    -webkit-filter: drop-shadow(0 5px 4px);
     filter: drop-shadow(0 5px 4px);
     background-color: unset; }
     .type-chart a[data-factor="-2"] {
       color: #000; }
 
 .type-panel {
+  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-line-pack: start;
   align-content: flex-start; }
   .type-panel[data-effect^="def"] {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
   .type-panel[data-effect="atk-n"], .type-panel[data-effect="def-n"] {
@@ -268,12 +294,20 @@ table {
     -ms-flex-wrap: wrap-reverse;
     flex-wrap: wrap-reverse; }
   .type-panel[data-effect="atk-p"] {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
     grid-area: atk-p; }
   .type-panel[data-effect="atk-n"] {
+    -ms-grid-row: 5;
+    -ms-grid-column: 5;
     grid-area: atk-n; }
   .type-panel[data-effect="def-p"] {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
     grid-area: def-p; }
   .type-panel[data-effect="def-n"] {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
     grid-area: def-n; }
   .type-panel > .type-icon {
     margin: .35rem .25rem;
@@ -294,8 +328,12 @@ table {
   color: #666;
   font-weight: 900;
   text-align: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #cfc), color-stop(0, #fcc));
+  background-image: -webkit-linear-gradient(#cfc 50%, #fcc 0);
+  background-image: -o-linear-gradient(#cfc 50%, #fcc 0);
   background-image: linear-gradient(#cfc 50%, #fcc 0);
   border-radius: 2rem;
+  -webkit-box-shadow: 0 5px 15px -1px rgba(0, 0, 0, 0.5), 0 1px 15px rgba(0, 0, 0, 0.2), inset 0 -5px 40px rgba(0, 0, 0, 0.1);
   box-shadow: 0 5px 15px -1px rgba(0, 0, 0, 0.5), 0 1px 15px rgba(0, 0, 0, 0.2), inset 0 -5px 40px rgba(0, 0, 0, 0.1); }
   .reset-anchor::before {
     content: 'Attacker => Defender';
@@ -314,7 +352,6 @@ table {
   .reset-anchor .part-effect {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
     bottom: 0;
     color: rgba(0, 0, 0, 0.05);
@@ -343,6 +380,8 @@ table {
   padding-left: .5rem;
   color: #666;
   opacity: 0;
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
   transition: opacity .5s;
   text-align: start; }
   .data-section:hover .chart-note {
