@@ -351,6 +351,7 @@ table {
       position: absolute;
       top: 10%;
       right: 1em;
+      z-index: 1;
       border-left: 1em solid transparent;
       border-right: 1em solid transparent;
       border-bottom: 1em solid;
@@ -361,6 +362,7 @@ table {
       position: absolute;
       right: 1em;
       bottom: 10%;
+      z-index: 1;
       border-top: 1em solid;
       border-left: 1em solid transparent;
       border-right: 1em solid transparent;
