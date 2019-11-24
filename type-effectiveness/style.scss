@@ -136,6 +136,7 @@ table {
   position: relative;
   margin-top: 2.5rem;
   margin-bottom: 2em;
+  color: #666;
 
   &::before {
     content: 'Defending (Pokemon) Type';
@@ -143,6 +144,7 @@ table {
     left: 0;
     right: 0;
     bottom: 100%;
+    font-family: monospace;
   }
 
   &::after {
@@ -152,6 +154,7 @@ table {
     right: 100%;
     bottom: 0;
     writing-mode: vertical-rl;
+    font-family: monospace;
   }
 }
 

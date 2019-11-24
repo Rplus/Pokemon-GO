@@ -167,13 +167,15 @@ table {
 .data-section {
   position: relative;
   margin-top: 2.5rem;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  color: #666; }
   .data-section::before {
     content: 'Defending (Pokemon) Type';
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 100%; }
+    bottom: 100%;
+    font-family: monospace; }
   .data-section::after {
     content: 'Attacking (Skill) Type';
     position: absolute;
@@ -182,7 +184,8 @@ table {
     bottom: 0;
     -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl; }
+    writing-mode: vertical-rl;
+    font-family: monospace; }
 
 .label {
   display: -webkit-box;
