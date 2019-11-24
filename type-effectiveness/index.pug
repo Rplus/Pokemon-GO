@@ -25,6 +25,7 @@ html(lang="en" dir="ltr")
       each type in types
         if type
           a(id=`type-${type}` class="type-anchor")
+      a.type-anchor#list-all-type
       table.data
         each atkType in types
           tr
@@ -51,6 +52,7 @@ html(lang="en" dir="ltr")
       .chart
         a(href="###").reset-anchor
           .part-effect
+        a(href="#list-all-type").list-all-type list all types
         each typeAD, type in chart
           div(class=`type-chart type-chart__${type}`)
             a.target-type(

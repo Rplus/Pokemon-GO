@@ -166,7 +166,8 @@ table {
 
 .data-section {
   position: relative;
-  margin-top: 2.5rem; }
+  margin-top: 2.5rem;
+  margin-bottom: 2em; }
   .data-section::before {
     content: 'Defending (Pokemon) Type';
     position: absolute;
@@ -218,34 +219,47 @@ table {
 
 .chart {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2em;
+  left: 2em;
   right: 0;
   bottom: 0;
-  margin: 2em 0 0 2em;
+  margin: .75em;
   display: none;
-  background-color: rgba(255, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 0 0.9em rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 0 0.9em rgba(255, 255, 255, 0.75);
   background-color: rgba(255, 255, 255, 0.75); }
   .type-anchor:target ~ .chart {
     display: block; }
 
 #type-Bug:target ~ .chart > .type-chart.type-chart__Bug, #type-Dark:target ~ .chart > .type-chart.type-chart__Dark, #type-Dragon:target ~ .chart > .type-chart.type-chart__Dragon, #type-Electric:target ~ .chart > .type-chart.type-chart__Electric, #type-Fairy:target ~ .chart > .type-chart.type-chart__Fairy, #type-Fighting:target ~ .chart > .type-chart.type-chart__Fighting, #type-Fire:target ~ .chart > .type-chart.type-chart__Fire, #type-Flying:target ~ .chart > .type-chart.type-chart__Flying, #type-Ghost:target ~ .chart > .type-chart.type-chart__Ghost, #type-Grass:target ~ .chart > .type-chart.type-chart__Grass, #type-Ground:target ~ .chart > .type-chart.type-chart__Ground, #type-Ice:target ~ .chart > .type-chart.type-chart__Ice, #type-Normal:target ~ .chart > .type-chart.type-chart__Normal, #type-Poison:target ~ .chart > .type-chart.type-chart__Poison, #type-Psychic:target ~ .chart > .type-chart.type-chart__Psychic, #type-Rock:target ~ .chart > .type-chart.type-chart__Rock, #type-Steel:target ~ .chart > .type-chart.type-chart__Steel, #type-Water:target ~ .chart > .type-chart.type-chart__Water {
   display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr .4rem 10% .4rem 1fr;
-  -ms-grid-columns: 1fr .2rem 10% .2rem 1fr;
-  grid-template: 'def-p . atk-p' 1fr '.     c     .' 10% 'def-n . atk-n' 1fr / 1fr 10% 1fr;
-  grid-gap: .4rem .2rem; }
+  display: grid; }
 
 .type-chart {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
   display: none;
-  padding: 5%;
-  pointer-events: none; }
+  padding: 3%;
+  pointer-events: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #cfc), color-stop(0, #fcc));
+  background-image: -webkit-linear-gradient(#cfc 50%, #fcc 0);
+  background-image: -o-linear-gradient(#cfc 50%, #fcc 0);
+  background-image: linear-gradient(#cfc 50%, #fcc 0);
+  border-radius: 2rem;
+  -webkit-box-shadow: 0 0.25em 0.25em -1px rgba(0, 0, 0, 0.3), 0 1px 15px rgba(0, 0, 0, 0.2), inset 0 -0.5em 2em -0.5em rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25em 0.25em -1px rgba(0, 0, 0, 0.3), 0 1px 15px rgba(0, 0, 0, 0.2), inset 0 -0.5em 2em -0.5em rgba(0, 0, 0, 0.2);
+  -ms-grid-rows: 1fr .4rem 10% .4rem 1fr;
+  -ms-grid-columns: 1fr .2rem 10% .2rem 1fr;
+  grid-template: 'def-p . atk-p' 1fr '.     c     .' 10% 'def-n . atk-n' 1fr / 1fr 10% 1fr;
+  grid-gap: .4rem .2rem; }
+  #list-all-type:target ~ .chart .type-chart {
+    display: -ms-grid;
+    display: grid;
+    position: relative;
+    margin-bottom: 1em; }
   .type-chart .target-type {
     -ms-grid-row: 3;
     -ms-grid-column: 3;
@@ -259,7 +273,7 @@ table {
     .type-chart .target-type::before {
       content: "/ " attr(title) " /";
       position: absolute;
-      top: -5em;
+      top: -4.75em;
       left: 50%;
       font-size: .5em;
       font-weight: bolder;
@@ -321,25 +335,18 @@ table {
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 2.5%;
   text-decoration: none;
   font-family: monospace;
-  font-size: 1.5rem;
-  color: #666;
+  font-size: 1.25rem;
+  color: #999;
   font-weight: 900;
-  text-align: center;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #cfc), color-stop(0, #fcc));
-  background-image: -webkit-linear-gradient(#cfc 50%, #fcc 0);
-  background-image: -o-linear-gradient(#cfc 50%, #fcc 0);
-  background-image: linear-gradient(#cfc 50%, #fcc 0);
-  border-radius: 2rem;
-  -webkit-box-shadow: 0 5px 15px -1px rgba(0, 0, 0, 0.5), 0 1px 15px rgba(0, 0, 0, 0.2), inset 0 -5px 40px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 5px 15px -1px rgba(0, 0, 0, 0.5), 0 1px 15px rgba(0, 0, 0, 0.2), inset 0 -5px 40px rgba(0, 0, 0, 0.1); }
+  text-align: center; }
   .reset-anchor::before {
     content: 'Attacker => Defender';
     position: absolute;
     left: 0;
-    right: 0; }
+    right: 0;
+    z-index: 1; }
   .reset-anchor::after {
     content: '[+] Effect [-]';
     position: absolute;
@@ -348,7 +355,8 @@ table {
     bottom: 0;
     -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl; }
+    writing-mode: vertical-rl;
+    z-index: 1; }
   .reset-anchor .part-effect {
     position: absolute;
     top: 0;
@@ -373,7 +381,10 @@ table {
       border-left: 1em solid transparent;
       border-right: 1em solid transparent; }
 
+.list-all-type,
 .chart-note {
+  position: absolute;
+  top: 100%;
   display: block;
   font-family: monospace;
   margin-top: .5rem;
@@ -384,5 +395,10 @@ table {
   -o-transition: opacity .5s;
   transition: opacity .5s;
   text-align: start; }
-  .data-section:hover .chart-note {
+  .data-section:hover .list-all-type, .data-section:hover
+  .chart-note {
     opacity: 1; }
+
+.list-all-type {
+  right: 0;
+  text-transform: capitalize; }
