@@ -221,16 +221,16 @@ table {
   padding: 3%;
   pointer-events: none;
   background-image: linear-gradient($factor-color_1 50%, $factor-color_-1 0);
-  border-radius: 2rem;
+  border-radius: 2em;
   box-shadow:
     0 .25em .25em -1px rgba(#000, .3),
-    0 1px 15px rgba(#000, .2),
+    0 1px 1em rgba(#000, .2),
     inset 0 -.5em 2em -.5em rgba(#000, .2);
   grid-template:
     'def-p . atk-p' 1fr
     '.     c     .' 10%
     'def-n . atk-n' 1fr / 1fr 10% 1fr;
-  grid-gap: .4rem .2rem;
+  grid-gap: .4em .2em;
 
   @each $i in $types {
     #type-#{$i}:target ~ .chart > &.type-chart__#{$i} {
@@ -238,17 +238,32 @@ table {
     }
   }
 
+  #list-all-type--smaller:target ~ .chart &,
   #list-all-type:target ~ .chart & {
     display: grid;
     position: relative;
     margin-bottom: 1em;
   }
 
+  #list-all-type--smaller:target ~ .chart & {
+    font-size: .5em;
+    width: calc(50% - .5em);
+    height: calc(50% - .5em);
+    width: 50%;
+    height: 50%;
+    float: left;
+
+    &:nth-of-type(even) {
+      margin-left: 1em;
+      margin-right: -1em;
+    }
+  }
+
   .target-type {
     grid-area: c;
     justify-self: center;
     align-self: center;
-    font-size: 5rem;
+    font-size: 5em;
     text-decoration: none;
 
     &::before {
@@ -266,7 +281,7 @@ table {
 
   a {
     color: rgba(#000, .2);
-    filter: drop-shadow(0 5px 4px);
+    filter: drop-shadow(0 .12em .09em);
     background-color: unset;
 
     &[data-factor="-2"] {
@@ -299,8 +314,8 @@ table {
   &[data-effect="def-n"] { grid-area: def-n; }
 
   > .type-icon {
-    margin: .35rem .25rem;
-    font-size: 3rem;
+    margin: .125em .08em;
+    font-size: 3em;
     pointer-events: auto;
     position: relative;
   }
@@ -315,10 +330,14 @@ table {
   text-decoration: none;
 
   font-family: monospace;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   color: #999;
   font-weight: 900;
   text-align: center;
+
+  #list-all-type--smaller:target ~ .chart & {
+    display: none;
+  }
 
   &::before {
     content: 'Attacker => Defender';
@@ -344,7 +363,7 @@ table {
     right: 0;
     bottom: 0;
     color: rgba(#000, .05);
-    font-size: 3rem;
+    font-size: 3em;
 
     &::before {
       content: '';
@@ -376,8 +395,8 @@ table {
   top: 100%;
   display: block;
   font-family: monospace;
-  margin-top: .5rem;
-  padding-left: .5rem;
+  margin-top: .5em;
+  padding-left: .5em;
   color: #666;
   opacity: 0;
   transition: opacity .5s;
@@ -391,4 +410,10 @@ table {
 .list-all-type {
   right: 0;
   text-transform: capitalize;
+}
+
+.list-all-type--smaller {
+  font-family: monospace;
+  text-transform: capitalize;
+  padding-bottom: 1em;
 }
