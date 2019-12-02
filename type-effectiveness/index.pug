@@ -25,6 +25,7 @@ html(lang="en" dir="ltr")
       each type in types
         if type
           a(id=`type-${type}` class="type-anchor")
+          input.checkbox-type(type="checkbox" id=`checkbox-${type}` hidden)
       a.type-anchor#list-all-type
       a.type-anchor.type-anchor--smaller#list-all-type--smaller
       table.data
@@ -58,7 +59,7 @@ html(lang="en" dir="ltr")
           div(class=`type-chart type-chart__${type}`)
             a.target-type(
               class=`type-icon type-icon__${type}`
-              href="###"
+              href=`#type-${type}`
               title= type
             )
             each targetArr, effect in typeAD
@@ -76,6 +77,7 @@ html(lang="en" dir="ltr")
                     data-factor= targetType[1]
                     style=`order: ${targetType[1]}`
                   )
+            label.label-checkbox-type(for=`checkbox-${type}`)=`/ ${type} /`
         a.list-all-type--smaller(href="#list-all-type--smaller") [smaller chart]
       .chart-note
         | ^ Click type icon to switch into Chart view. :)

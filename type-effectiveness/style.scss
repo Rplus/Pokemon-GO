@@ -83,6 +83,10 @@ table {
   }
 }
 
+%mark-icon {
+  background-color: #ff0;
+}
+
 .type-icon {
   $icon-size: 24px;
 
@@ -100,7 +104,7 @@ table {
       --i: #{$var};
 
       #type-#{$_type}:target ~ table.data & {
-        background-color: #ff0;
+        @extend %mark-icon;
       }
     }
   }
@@ -247,16 +251,24 @@ table {
 
   #list-all-type--smaller:target ~ .chart & {
     font-size: .5em;
-    width: calc(50% - .5em);
-    height: calc(50% - .5em);
     width: 50%;
     height: 50%;
     float: left;
+    margin: 0;
+    transform: scale(.95);
+  }
 
-    &:nth-of-type(even) {
-      margin-left: 1em;
-      margin-right: -1em;
-    }
+  .label-checkbox-type {
+    position: absolute;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5em;
+    font-weight: bolder;
+    white-space: nowrap;
+    color: rgba(#000, .2);
+    pointer-events: auto;
+    cursor: pointer;
   }
 
   .target-type {
@@ -264,19 +276,8 @@ table {
     justify-self: center;
     align-self: center;
     font-size: 5em;
+    pointer-events: auto;
     text-decoration: none;
-
-    &::before {
-      content: '/ ' attr(title) ' /';
-      position: absolute;
-      top: -4.75em;
-      left: 50%;
-      font-size: .5em;
-      font-weight: bolder;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      pointer-events: none;
-    }
   }
 
   a {
@@ -335,7 +336,8 @@ table {
   font-weight: 900;
   text-align: center;
 
-  #list-all-type--smaller:target ~ .chart & {
+  #list-all-type--smaller:target ~ .chart &,
+  #list-all-type:target ~ .chart & {
     display: none;
   }
 
@@ -416,4 +418,22 @@ table {
   font-family: monospace;
   text-transform: capitalize;
   padding-bottom: 1em;
+}
+
+.checkbox-type:checked ~ #list-all-type--smaller:target ~ .chart .type-chart {
+  display: none;
+}
+
+%check-type {
+  color: rgba(#000, .5);
+}
+
+@each $i in $types {
+  #checkbox-#{$i}:checked ~ .chart .type-chart__#{$i} .label-checkbox-type {
+    @extend %check-type;
+  }
+
+  #checkbox-#{$i}:checked ~ #list-all-type--smaller:target ~ .chart .type-chart__#{$i} {
+    @extend %show-me;
+  }
 }
