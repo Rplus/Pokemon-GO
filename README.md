@@ -11,6 +11,11 @@
 > inspired from [LeekDuck's shiny graphic](https://leekduck.com/shinylist/)
 
 
+### ● PvP Moves in Pokémon GO
+> <https://rplus.github.io/PvP-moves/>  
+> show pvp moves data
+
+
 ### ● Pokémons CP list
 
 > <https://rplus.github.io/Pokemon-CP-list/>  
