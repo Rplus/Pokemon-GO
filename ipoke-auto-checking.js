@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         ipoke-auto-refresh+notice+push
 // @namespace    http://tampermonkey.net/
-// @version      2.1
-// @description  try to take over the world!
+// @version      2.2
+// @description  query pokemon on twpkinfo map
 // @author       Rplus
 // @match        https://twpkinfo.com/ipoke.aspx*
 // @grant        GM_setValue
@@ -17,8 +17,8 @@ let DesiredList = GM_getValue('list');
 if (!DesiredList) {
   DesiredList = [
     '/IV100/',
-    // '/443.',
-    // '/444.',
+    '/443.',
+    '/444.',
     '/524.',
     '/525.',
     '/564.',
@@ -95,8 +95,13 @@ function sentNotice(notice) {
 
   let url = notiUrl.replace('%s', notice.join('%0A'));
 
+  // disable notification when 01:00 ~ 08:00
+  if (new Date().getHours() < 8 && new Date().getHours() > 1) {
+    url += '&disable_notification=true';
+  }
+
   console.log(url);
-  // fetch(url);
+  fetch(url);
 }
 
 
@@ -159,8 +164,8 @@ function getPos(target) {
     : { x: bRect.x + bWh, y: bRect.y + bHh }
 
   let pos = {
-    x: ((tRect.x - cPos.x) / bRect.width).toFixed(3),
-    y: ((tRect.y - cPos.y) / -bRect.height).toFixed(3),
+    x: ((tRect.x - cPos.x) * 2 / bRect.width).toFixed(3),
+    y: ((tRect.y - cPos.y) * 2 / -bRect.height).toFixed(3),
   };
 
   return `(${pos.x}, ${pos.y})`;
